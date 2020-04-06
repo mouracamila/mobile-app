@@ -1,30 +1,32 @@
-import React from 'react';
-import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
-import { View, Image, Text, TouchableOpacity, Linking } from 'react-native';
-import * as MailComposer from 'expo-mail-composer';
+import React from "react";
+import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { View, Image, Text, TouchableOpacity, Linking } from "react-native";
+import * as MailComposer from "expo-mail-composer";
 
-import logoImg from '../../assets/logo.png';
+import logoImg from "../../assets/logo.png";
+import img from "../../assets/img.png";
 
-import styles from './styles';
+import styles from "./styles";
 
 export default function AdDetail() {
   const navigation = useNavigation();
-  const message = 'Olá Ricardo, estou entrando em contato pois estou interessada em seus tomates.';
-  
-  function navigateBack(){
-    navigation.goBack()  
+  const message =
+    "Olá Ricardo, estou entrando em contato pois estou interessada em seus tomates.";
+
+  function navigateBack() {
+    navigation.goBack();
   }
 
   function sendMail() {
     MailComposer.composeAsync({
-      subject: 'Produto: Tomate',
-      recipients: ['ricardo@luders.com.br'],
+      subject: "Produto: Tomate",
+      recipients: ["ricardo@luders.com.br"],
       body: message,
-    })
+    });
   }
 
-  function sendWhatsapp(){
+  function sendWhatsapp() {
     Linking.openURL(`whatsapp://send?phone=+420774398023t=${message}`);
   }
 
@@ -34,27 +36,36 @@ export default function AdDetail() {
         <Image source={logoImg} />
 
         <TouchableOpacity onPress={navigateBack}>
-          <Feather name="arrow-left" size={28} color="#737380"/>
+          <Feather name="arrow-left" size={28} color="#737380" />
         </TouchableOpacity>
-        
       </View>
       <View style={styles.announcement}>
-        <Text style={styles.announcementValue}>Tomates</Text>
-        
-        <Text style={styles.announcementValue}>Lorem ipsum dolor sit amet 
-          consectetur, adipisicing elit. Aut, distinctio molestias accusamus, 
-          ab cupiditate aliquam laborum rerum voluptatem ducimus saepe harum 
-          explicabo at! Rem reprehenderit, necessitatibus corrupti quidem quos 
-          perferendis.
-        </Text>
-        
-        <Text style={styles.announcementProperty}>VALOR:</Text>
-        <Text style={styles.announcementValue}>R$ 5,00</Text>
+        <Image source={img} style={styles.announcementImg} />
+
+        <View style={styles.announcementContent}>
+          <Text style={styles.announcementProduct}>Tomates</Text>
+
+          <Text style={styles.announcementDescription}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut,
+            distinctio molestias accusamus, ab cupiditate aliquam laborum rerum
+            voluptatem ducimus saepe harum explicabo at! Rem reprehenderit,
+            necessitatibus corrupti quidem quos perferendis.
+          </Text>
+
+          <View style={styles.announcementHowMuch}>
+            <Text style={styles.announcementHowMuchProperty}>VALOR:</Text>
+            <Text style={styles.announcementHowMuchValue}> R$ 5,00</Text>
+            <Text style={styles.announcementHowMuchBy}>/Kg</Text>
+          </View>
+
+          <Text style={styles.announcemenTags}>ORGANICO - OUTRA COISA </Text>
+        </View>
       </View>
       <View style={styles.contactBox}>
-        
-        <Text style={styles.localDescription}>Entre em contato com vendedor:</Text>
-        
+        <Text style={styles.localDescription}>
+          Entre em contato com vendedor:
+        </Text>
+
         <View style={styles.actions}>
           <TouchableOpacity style={styles.action} onPress={sendWhatsapp}>
             <Text style={styles.actionText}>WhatsApp</Text>
@@ -63,9 +74,7 @@ export default function AdDetail() {
             <Text style={styles.actionText}>E-mail</Text>
           </TouchableOpacity>
         </View>
-      
       </View>
-
     </View>
   );
 }
