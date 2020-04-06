@@ -15,7 +15,7 @@ export default function Routes() {
       <AppStack.Navigator screenOptions={{ headerShown: false }}>
         
         <AppStack.Screen name="AdList" component={AdList} />
-        <AppStack.Screen name="AdDetail" component={AdDetail}/>
+        <AppStack.Screen name="AdDetail" component={AdDetail} />
         <AppStack.Screen name="Register" component={Register} />
       
       </AppStack.Navigator>
