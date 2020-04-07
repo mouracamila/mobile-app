@@ -1,18 +1,19 @@
-import React from 'react';
-import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
-import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import React from "react";
+import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { View, FlatList, Image, Text, TouchableOpacity } from "react-native";
+import Announcement from "../../components/Announcement";
 
-import logoImg from '../../assets/logo.png';
+import logoImg from "../../assets/logo.png";
 // import fotoImg from '../..assets/foto.png';
 
-import styles from './styles';
+import styles from "./styles";
 
-export default function AdList(){
+export default function AdList() {
   const navigation = useNavigation();
 
   function navigateToDetail() {
-    navigation.navigate('AdDetail');
+    navigation.navigate("AdDetail");
   }
 
   return (
@@ -25,46 +26,26 @@ export default function AdList(){
       </View>
 
       <Text style={styles.title}> Bem Vindo! </Text>
-      <Text style={styles.description}>Entre em contato com o vendedor 
-      clicando no anuncio </Text>
+      <Text style={styles.description}>
+        Entre em contato com o vendedor clicando no anuncio{" "}
+      </Text>
 
       <FlatList
-        data={[1, 2, 3]}
+        data={[1, 2, 3, 4, 5, 6]}
         style={styles.announcementList}
-        keyExtractor={announcement => String(announcement)}
+        keyExtractor={(announcement) => String(announcement)}
         showsVerticalScrollIndicator={false}
         renderItem={() => (
           <View style={styles.announcementList}>
-            <View style={styles.announcement}>
-            {/* <Image source={fotoImg} /> */}
-            
-              <Text style={styles.announcementProperty}>Tomates</Text>
-            
-              <Text style={styles.announcementValue}>Lorem ipsum dolor sit amet 
-              consectetur, adipisicing elit. Aut, distinctio molestias accusamus, 
-              ab cupiditate aliquam laborum rerum voluptatem ducimus saepe harum 
-              explicabo at! Rem reprehenderit, necessitatibus corrupti quidem quos 
-              perferendis.</Text>
-              
-              <Text style={styles.announcementProperty}>VALOR:</Text>
-              <Text style={styles.announcementValue}>R$ 5,00</Text>
-
-              <TouchableOpacity
-                style={styles.detailsButton}
-                onPress={navigateToDetail}
-              >
-                <Text style={styles.detailsButtonText}>Ver Mais detalhes</Text>
-                <Feather name="arrow-right" size={16} color="#518F57"/>
-              </TouchableOpacity>
-
-            </View>
-
+            <TouchableOpacity
+              style={styles.detailsButton}
+              onPress={navigateToDetail}
+            >
+              <Announcement item={{ title: "Tomate" }} />
+            </TouchableOpacity>
           </View>
-
         )}
-
       />
-
     </View>
   );
 }
