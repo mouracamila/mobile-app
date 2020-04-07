@@ -12,81 +12,70 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    borderBottomColor: "#518F57",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    paddingBottom: 5,
   },
 
-  announcement: {
-    borderRadius: 8,
-    backgroundColor: "#FFF",
-    marginBottom: 5,
-    marginTop: 24,
-  },
-
-  announcementContent: {
-    padding: 10,
-  },
-
-  announcementImg: {
-    width: "100%",
-    height: "auto",
-    aspectRatio: 3 / 2,
-  },
-
-  announcementProduct: {
-    fontSize: 16,
-    color: "#41414d",
+  sellerName: {
+    fontSize: 24,
     fontWeight: "bold",
-    marginVertical: 8,
+    marginTop: 6,
   },
 
-  announcementDescription: {
-    fontSize: 15,
+  sellerCity: {
+    fontSize: 12,
+    color: "#bbccb8",
+  },
+
+  sellerTags: {
+    fontSize: 12,
+    marginVertical: 5,
+    borderTopColor: "#518F57",
     color: "#737380",
+    fontWeight: "bold",
   },
 
-  announcementHowMuch: {
+  delivery: {
+    marginVertical: 5,
+  },
+
+  deliveryText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginLeft: 3,
+  },
+
+  delivery: {
+    marginTop: 4,
     flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "flex-start",
     alignItems: "center",
-    marginVertical: 8,
   },
 
-  announcementHowMuchProperty: {
-    fontSize: 15,
+  deliveryInformation: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+
+  deliveryInformationDay: {
     color: "#737380",
-  },
-
-  announcementHowMuchValue: {
-    fontSize: 15,
-    color: "#737380",
-  },
-
-  announcementHowMuchBy: {
-    fontSize: 15,
-    color: "#737380",
-    marginRight: 6,
-  },
-
-  announcemenTags: {
-    fontSize: 15,
-    paddingTop: 8,
-    borderTopColor: "#737380",
-    borderTopWidth: StyleSheet.hairlineWidth,
   },
 
   contactBox: {
-    padding: 10,
+    padding: 8,
     borderRadius: 8,
     backgroundColor: "#FFF",
     marginBottom: 2,
   },
 
   localDescription: {
-    fontSize: 15,
+    fontSize: 16,
     color: "#737380",
   },
 
   actions: {
-    marginTop: 16,
+    marginTop: 10,
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -94,7 +83,7 @@ export default StyleSheet.create({
   action: {
     backgroundColor: "#518F57",
     borderRadius: 8,
-    height: 45,
+    height: 40,
     width: "48%",
     justifyContent: "center",
     alignItems: "center",

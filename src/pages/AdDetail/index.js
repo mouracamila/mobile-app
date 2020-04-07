@@ -1,13 +1,12 @@
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { View, Image, Text, TouchableOpacity, Linking } from "react-native";
 import * as MailComposer from "expo-mail-composer";
-
-import logoImg from "../../assets/logo.png";
-import img from "../../assets/img.png";
+import { View, Text, TouchableOpacity, Linking } from "react-native";
 
 import styles from "./styles";
+import Announcement from "../../components/Announcement";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function AdDetail() {
   const navigation = useNavigation();
@@ -33,34 +32,41 @@ export default function AdDetail() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={logoImg} />
-
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#737380" />
         </TouchableOpacity>
+        <TouchableOpacity onPress={navigateBack}>
+          <Feather name="more-vertical" size={28} color="#737380" />
+        </TouchableOpacity>
       </View>
-      <View style={styles.announcement}>
-        <Image source={img} style={styles.announcementImg} />
 
-        <View style={styles.announcementContent}>
-          <Text style={styles.announcementProduct}>Tomates</Text>
-
-          <Text style={styles.announcementDescription}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut,
-            distinctio molestias accusamus, ab cupiditate aliquam laborum rerum
-            voluptatem ducimus saepe harum explicabo at! Rem reprehenderit,
-            necessitatibus corrupti quidem quos perferendis.
-          </Text>
-
-          <View style={styles.announcementHowMuch}>
-            <Text style={styles.announcementHowMuchProperty}>VALOR:</Text>
-            <Text style={styles.announcementHowMuchValue}> R$ 5,00</Text>
-            <Text style={styles.announcementHowMuchBy}>/Kg</Text>
-          </View>
-
-          <Text style={styles.announcemenTags}>ORGANICO - OUTRA COISA </Text>
-        </View>
+      <View style={styles.sellerInformation}>
+        <TouchableOpacity style={styles.actionMoreInformation}>
+          <Text style={styles.sellerName}>Nome do Vendedor</Text>
+        </TouchableOpacity>
+        <Text style={styles.sellerCity}>Cidade do vendedor</Text>
       </View>
+
+      <Text style={styles.sellerTags}>ACEITO CARTÕES - ENTREGO </Text>
+      <View style={styles.delivery}>
+        <Feather name="truck" size={16} color="#000000" />
+        <Text style={styles.deliveryText}>Informações de entrega:</Text>
+      </View>
+
+      <View style={styles.deliveryInformation}>
+        <Text style={styles.deliveryInformationText}>
+          Dias que realizo entrega:
+        </Text>
+        <Text style={styles.deliveryInformationDay}>Seg - Sab</Text>
+      </View>
+
+      <ScrollView
+        style={styles.announcementMore}
+        showsVerticalScrollIndicator={false}
+      >
+        <Announcement item={{ title: "Tomate" }} />
+      </ScrollView>
+
       <View style={styles.contactBox}>
         <Text style={styles.localDescription}>
           Entre em contato com vendedor:
