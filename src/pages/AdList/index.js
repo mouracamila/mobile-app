@@ -2,10 +2,10 @@ import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { View, FlatList, Image, Text, TouchableOpacity } from "react-native";
+
 import Announcement from "../../components/Announcement";
 
 import logoImg from "../../assets/logo.png";
-// import fotoImg from '../..assets/foto.png';
 
 import styles from "./styles";
 
@@ -31,7 +31,7 @@ export default function AdList() {
       </Text>
 
       <FlatList
-        data={[1, 2, 3, 4, 5, 6]}
+        data={[1, 2, 3]}
         style={styles.announcementList}
         keyExtractor={(announcement) => String(announcement)}
         showsVerticalScrollIndicator={false}
