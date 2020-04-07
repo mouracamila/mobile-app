@@ -1,8 +1,14 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from "react";
+import { View, Image, Text } from "react-native";
 
-export default function Register(){
+import styles from "./styles";
+
+// import background from "../../assets/background";
+
+export default function Register() {
   return (
-    <View />
+    <View style={styles.container}>
+      <Text>Register</Text>
+    </View>
   );
 }
