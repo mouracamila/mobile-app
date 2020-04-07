@@ -1,33 +1,26 @@
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import * as MailComposer from "expo-mail-composer";
-import { View, Text, TouchableOpacity, Linking } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
 import styles from "./styles";
 import Announcement from "../../components/Announcement";
+import SellerContact from "../../components/SellerContact";
+
 import { ScrollView } from "react-native-gesture-handler";
 
 export default function AdDetail() {
   const navigation = useNavigation();
-  const message =
-    "Olá Ricardo, estou entrando em contato pois estou interessada em seus tomates.";
 
   function navigateBack() {
     navigation.goBack();
   }
 
-  function sendMail() {
-    MailComposer.composeAsync({
-      subject: "Produto: Tomate",
-      recipients: ["ricardo@luders.com.br"],
-      body: message,
-    });
+  function navigateToSellerProfile() {
+    navigation.navigate("SellerProfile");
   }
 
-  function sendWhatsapp() {
-    Linking.openURL(`whatsapp://send?phone=+420774398023t=${message}`);
-  }
+  function navigateMore() {}
 
   return (
     <View style={styles.container}>
@@ -35,13 +28,16 @@ export default function AdDetail() {
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#737380" />
         </TouchableOpacity>
-        <TouchableOpacity onPress={navigateBack}>
+        <TouchableOpacity onPress={navigateMore}>
           <Feather name="more-vertical" size={28} color="#737380" />
         </TouchableOpacity>
       </View>
 
       <View style={styles.sellerInformation}>
-        <TouchableOpacity style={styles.actionMoreInformation}>
+        <TouchableOpacity
+          style={styles.actionMoreInformation}
+          onPress={() => navigateToSellerProfile(navigateToSellerProfile)}
+        >
           <Text style={styles.sellerName}>Nome do Vendedor</Text>
         </TouchableOpacity>
         <Text style={styles.sellerCity}>Cidade do vendedor</Text>
@@ -65,22 +61,19 @@ export default function AdDetail() {
         showsVerticalScrollIndicator={false}
       >
         <Announcement item={{ title: "Tomate" }} />
+
+        <TouchableOpacity
+          style={styles.detailsButton}
+          onPress={() => navigateToSellerProfile(navigateToSellerProfile)}
+        >
+          <Text style={styles.detailsButtonText}>
+            Ver mais anuncios desse vendedor
+          </Text>
+          <Feather name="arrow-right" size={16} color="#737380" />
+        </TouchableOpacity>
       </ScrollView>
 
-      <View style={styles.contactBox}>
-        <Text style={styles.localDescription}>
-          Entre em contato com vendedor:
-        </Text>
-
-        <View style={styles.actions}>
-          <TouchableOpacity style={styles.action} onPress={sendWhatsapp}>
-            <Text style={styles.actionText}>WhatsApp</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.action} onPress={sendMail}>
-            <Text style={styles.actionText}>E-mail</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      <SellerContact item={{ title: "contact" }} />
     </View>
   );
 }
