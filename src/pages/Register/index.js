@@ -46,14 +46,14 @@ export default function Register() {
 
         <TextInput
           style={styles.textInput}
-          placeholder="Email"
+          placeholder="E-mail"
           value={useremail}
           onChangeText={setUseremail}
         />
 
         <TextInput
           style={styles.textInput}
-          placeholder="Criar Senha"
+          placeholder="Senha"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -61,7 +61,7 @@ export default function Register() {
 
         <TextInput
           style={styles.textInput}
-          placeholder="Repitir Senha"
+          placeholder="Repetir Senha"
           value={passwordRepeat}
           onChangeText={setPasswordRepeat}
           secureTextEntry

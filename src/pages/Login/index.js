@@ -8,10 +8,10 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 // import logoImg from "../../assets/logo.png";
 
+import { AuthContext } from "../../routes";
+
 import styles from "./styles";
 import logoImg from "../../assets/logo.png";
-
-// const AuthContext = React.createContext();
 
 function SplashScreen() {
   return (
@@ -22,8 +22,10 @@ function SplashScreen() {
 }
 
 export default function Login() {
-  const [useremail, setUseremail] = React.useState("");
+  const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+
+  const { signIn } = React.useContext(AuthContext);
 
   const navigation = useNavigation();
 
@@ -45,14 +47,14 @@ export default function Login() {
 
         <TextInput
           style={styles.textInput}
-          placeholder="Email"
-          value={useremail}
-          onChangeText={setUseremail}
+          placeholder="E-mail"
+          value={email}
+          onChangeText={setEmail}
         />
 
         <TextInput
           style={styles.textInput}
-          placeholder="Password"
+          placeholder="Senha"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -64,7 +66,7 @@ export default function Login() {
 
         <TouchableOpacity
           style={styles.actionLogin}
-          onPress={() => signIn({ useremail, password })}
+          onPress={() => signIn({ email, password })}
         >
           <Text style={styles.actionTextlogin}>ENTRAR</Text>
         </TouchableOpacity>

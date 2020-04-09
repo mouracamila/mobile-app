@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { AsyncStorage } from "react-native";
 import axios from "axios";
 
-const AuthContext = React.createContext();
+export const AuthContext = React.createContext();
 const AppStack = createStackNavigator();
 
 // Pages
@@ -69,17 +69,21 @@ export default function Routes() {
   const authContext = React.useMemo(
     () => ({
       // Login
-      singIn: async (data) => {
+      signIn: async (data) => {
         // In a production app, we need to send some data (usually username, password) to server and get a token
         // We will also need to handle errors if sign in failed
         // After getting token, we need to persist the token using `AsyncStorage`
         // In the example, we'll use a dummy token
         const { email, password } = data;
 
-        axios
-          .post(`http://localhost:3333/sessions`, { email, password })
-          .then((resp) => {})
-          .catch((err) => {});
+        await axios
+          .post(`http://192.168.1.4:3333/sessions`, { email, password })
+          .then((resp) => {
+            console.log(resp);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
 
         dispatch({ type: "SIGN_IN", token: "dummy-auth-token" });
       },
