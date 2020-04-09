@@ -1,13 +1,13 @@
 import React from "react";
-import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { View, FlatList, Image, Text, TouchableOpacity } from "react-native";
 
+import styles from "./styles";
+
 import Announcement from "../../components/Announcement";
+import Menu from "../../components/Menu";
 
 import logoImg from "../../assets/logo.png";
-
-import styles from "./styles";
 
 export default function AdList() {
   const navigation = useNavigation();
@@ -46,6 +46,7 @@ export default function AdList() {
           </View>
         )}
       />
+      <Menu />
     </View>
   );
 }
