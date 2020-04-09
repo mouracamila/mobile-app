@@ -13,6 +13,8 @@ import Register from "./pages/Register";
 import AdList from "./pages/AdList";
 import AdDetail from "./pages/AdDetail";
 import SellerProfile from "./pages/SellerProfile";
+import FavoritesAd from "./pages/FavoritesAd";
+import MyAds from "./pages/MyAds";
 
 export default function Routes() {
   const [state, dispatch] = React.useReducer(
@@ -114,6 +116,8 @@ export default function Routes() {
               <AppStack.Screen name="AdList" component={AdList} />
               <AppStack.Screen name="AdDetail" component={AdDetail} />
               <AppStack.Screen name="SellerProfile" component={SellerProfile} />
+              <AppStack.Screen name="FavoritesAd" component={FavoritesAd} />
+              <AppStack.Screen name="MyAds" component={MyAds} />
             </>
           ) : (
             <>
