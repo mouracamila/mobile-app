@@ -15,49 +15,6 @@ export default StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     paddingBottom: 5,
   },
-  sellerName: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginTop: 6,
-  },
-
-  sellerCity: {
-    fontSize: 12,
-    color: "#bbccb8",
-  },
-  sellerTags: {
-    fontSize: 12,
-    marginVertical: 5,
-    borderTopColor: "#518F57",
-    color: "#737380",
-    fontWeight: "bold",
-  },
-
-  delivery: {
-    marginVertical: 5,
-  },
-
-  deliveryText: {
-    fontSize: 16,
-    fontWeight: "bold",
-    marginLeft: 3,
-  },
-
-  delivery: {
-    marginTop: 4,
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-  },
-
-  deliveryInformation: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-
-  deliveryInformationDay: {
-    color: "#737380",
-  },
 
   allSellerAnnouncement: {
     color: "#737380",
