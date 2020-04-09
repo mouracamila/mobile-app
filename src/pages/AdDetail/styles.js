@@ -14,7 +14,7 @@ export default StyleSheet.create({
     alignItems: "center",
     borderBottomColor: "#518F57",
     borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingBottom: 5,
+    paddingBottom: 10,
   },
 
   sellerName: {
