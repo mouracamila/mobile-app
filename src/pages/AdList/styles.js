@@ -33,12 +33,8 @@ export default StyleSheet.create({
 
   description: {
     fontSize: 16,
-    lineHeight: 24,
+    // lineHeight: 24,
     color: "#737380",
-  },
-
-  announcementList: {
-    marginTop: 10,
   },
 
   detailsButton: {
