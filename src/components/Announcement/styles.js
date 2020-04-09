@@ -6,7 +6,7 @@ export default StyleSheet.create({
     borderRadius: 6,
     backgroundColor: "#FFF",
     marginBottom: 5,
-    marginTop: 24,
+    marginTop: 5,
   },
 
   announcementContent: {
