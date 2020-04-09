@@ -1,24 +1,35 @@
-import React from "react";
-import { View, Image, TextInput, Text } from "react-native";
+import React, { useState, useContext } from "react";
+import { View, Image, TextInput, Text, Switch } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
+import { AuthContext } from "../../routes";
 
 import styles from "./styles";
 
 import logoImg from "../../assets/logo.png";
 
-// import background from "../../assets/background";
-
 export default function Register() {
-  const [username, setUsername] = React.useState("");
-  const [useremail, setUseremail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [passwordRepeat, setPasswordRepeat] = React.useState("");
+  const { signUp } = useContext(AuthContext);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordRepeat, setPasswordRepeat] = useState("");
+
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
   const navigation = useNavigation();
 
-  function navigateToList() {
-    navigation.navigate("AdList");
+  function handleSignUp() {
+    if (isEnabled) {
+      signUp({
+        name,
+        email,
+        password,
+        passwordRepeat,
+      });
+    }
   }
 
   function navigateBack() {
@@ -40,15 +51,15 @@ export default function Register() {
         <TextInput
           style={styles.textInput}
           placeholder="Name"
-          value={username}
-          onChangeText={setUsername}
+          value={name}
+          onChangeText={setName}
         />
 
         <TextInput
           style={styles.textInput}
           placeholder="E-mail"
-          value={useremail}
-          onChangeText={setUseremail}
+          value={email}
+          onChangeText={setEmail}
         />
 
         <TextInput
@@ -69,14 +80,24 @@ export default function Register() {
 
         <TouchableOpacity
           style={styles.actionRegister}
-          onPress={navigateToList}
+          activeOpacity={isEnabled ? 0.5 : 1}
+          onPress={handleSignUp}
         >
           <Text style={styles.actionTextregister}>CRIAR CONTA</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Text style={styles.actionText}> Aceitar Temos de uso</Text>
-        </TouchableOpacity>
+        <View style={styles.termsOfuse}>
+          <TouchableOpacity>
+            <Text style={styles.actionText}> Aceitar Temos de uso</Text>
+          </TouchableOpacity>
+          <Switch
+            trackColor={{ false: "#767577", true: "#bbccb8" }}
+            thumbColor={isEnabled ? "#518F57" : "#f4f3f4"}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+        </View>
       </View>
     </View>
   );

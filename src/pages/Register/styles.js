@@ -61,4 +61,8 @@ export default StyleSheet.create({
     fontSize: 18,
     color: "#ffff",
   },
+  termsOfuse: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+  },
 });
