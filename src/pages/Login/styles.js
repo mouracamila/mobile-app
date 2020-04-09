@@ -4,8 +4,8 @@ import Constants from "expo-constants";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingHorizontal: 16,
+    paddingTop: Constants.statusBarHeight + 20,
   },
 
   header: {
@@ -14,57 +14,57 @@ export default StyleSheet.create({
     alignItems: "center",
   },
 
-  loginBox: {
-    justifyContent: "center",
+  actionText: {
+    fontWeight: "bold",
+    fontSize: 16,
+    marginVertical: 5,
+    color: "#bbccb8",
+    marginTop: 24,
+  },
+
+  containerLogin: {
+    flex: 1,
     alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 40,
   },
 
   apresentation: {
     fontWeight: "bold",
     fontSize: 22,
-    marginVertical: 5,
     color: "#bbccb8",
-  },
-
-  loginBox: {
-    marginVertical: 5,
-    justifyContent: "center",
-    alignItems: "center",
+    marginBottom: 24,
   },
 
   textInput: {
-    fontSize: 18,
-    color: "#518F57",
-    fontWeight: "bold",
-  },
-
-  emailBox: {
-    backgroundColor: "#bbccb8",
-    borderRadius: 20,
-    height: 56,
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    marginVertical: 10,
-  },
-
-  passwordBox: {
-    backgroundColor: "#bbccb8",
-    borderRadius: 20,
-    height: 56,
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    marginVertical: 10,
-  },
-
-  loginPassword: {
-    fontSize: 18,
+    width: 300,
+    height: 50,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "#518F57",
+    marginBottom: 10,
+    borderRadius: 16,
   },
 
   resetPassword: {
     color: "#bbccb8",
     fontSize: 16,
     fontWeight: "bold",
+  },
+
+  actionLogin: {
+    backgroundColor: "#518F57",
+    borderRadius: 20,
+    height: 50,
+    width: 300,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 24,
+  },
+
+  actionTextlogin: {
+    fontWeight: "bold",
+    fontSize: 18,
+    color: "#ffff",
   },
 });
