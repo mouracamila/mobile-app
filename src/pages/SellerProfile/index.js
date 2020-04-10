@@ -28,7 +28,7 @@ export default function SellerProfile() {
         </TouchableOpacity>
       </View>
 
-      <SellerData seller={seller} />
+      <SellerData seller={{ name: "Tomateiro" }} />
 
       <Text style={styles.allSellerAnnouncement}>Todos 4 anuncios:</Text>
 
