@@ -64,6 +64,6 @@ export default StyleSheet.create({
 
   termsOfuse: {
     flexDirection: "row",
-    alignItems: "flex-end",
+    alignItems: "stretch",
   },
 });
