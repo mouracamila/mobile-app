@@ -28,6 +28,7 @@ export default StyleSheet.create({
     width: "100%",
     height: "auto",
     aspectRatio: 3 / 2,
+    marginTop: 16,
   },
 
   addPhoto: {
@@ -46,7 +47,6 @@ export default StyleSheet.create({
 
   description: {
     marginVertical: 8,
-    color: "#737380",
   },
 
   textInput: {
@@ -125,7 +125,10 @@ export default StyleSheet.create({
     alignItems: "center",
   },
 
-  userTerms: {
-    marginVertical: 12,
+  termsOfuse: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "stretch",
+    marginVertical: 10,
   },
 });

@@ -37,16 +37,13 @@ export default function CreateAd(props) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+        <Text style={{ fontSize: 22 }}>Criando anuncio</Text>
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#737380" />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Feather name="more-vertical" size={28} color="#737380" />
         </TouchableOpacity>
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={styles.apresentation}>Criando anuncio</Text>
         <View>
           <Image source={img} style={styles.announcementImg} />
         </View>
@@ -109,14 +106,10 @@ export default function CreateAd(props) {
             </Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.userTerms}>
-          <Text>
-            Esse anuncio não infringe os termos de uso da aplicação feira local
-          </Text>
+        <View style={styles.termsOfuse}>
+          <Text>Aceitar</Text>
           <TouchableOpacity>
-            <Text style={{ fontWeight: "bold" }}>
-              ler mais sobre os termos de uso
-            </Text>
+            <Text style={{ fontWeight: "bold" }}> termos de uso</Text>
           </TouchableOpacity>
           <Switch
             trackColor={{ false: "#767577", true: "#bbccb8" }}
