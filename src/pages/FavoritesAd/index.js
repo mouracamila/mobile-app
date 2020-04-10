@@ -7,8 +7,6 @@ import styles from "./styles";
 import Announcement from "../../components/Announcement";
 import Menu from "../../components/Menu";
 
-import logoImg from "../../assets/logo.png";
-
 export default function FavoritesAd() {
   const navigation = useNavigation();
 
@@ -23,14 +21,11 @@ export default function FavoritesAd() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image source={logoImg} />
+        <Text style={{ fontSize: 22 }}>Vendedores Favoritos</Text>
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#737380" />
         </TouchableOpacity>
       </View>
-      <Text style={styles.apresentation}>
-        Anuncios dos meus vendedores favoritos
-      </Text>
       <FlatList
         data={[1, 2, 3]}
         // style={styles.announcementList}
