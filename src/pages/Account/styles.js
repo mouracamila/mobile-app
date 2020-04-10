@@ -16,9 +16,7 @@ export default StyleSheet.create({
     paddingBottom: 10,
   },
   apresentation: {
-    // fontWeight: "bold",
     fontSize: 22,
-    // color: "#bbccb8",
-    marginVertical: 10,
+    marginTop: 20,
   },
 });
