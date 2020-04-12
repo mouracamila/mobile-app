@@ -72,7 +72,7 @@ export default function CreateSellerProfile() {
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.description}>Informação Sobre entrega</Text>
+        <Text style={styles.description}>Informação sobre entrega</Text>
         <View style={styles.actionsTags}>
           <TouchableOpacity style={styles.actionTag}>
             <Text style={styles.textTag}>ENTREGO</Text>
@@ -88,27 +88,27 @@ export default function CreateSellerProfile() {
         <Text style={styles.description}>Dias que entrego</Text>
         <View style={styles.actionsTagsDays}>
           <TouchableOpacity style={styles.tagDay}>
-            <Text style={styles.textTag}>Segunda</Text>
+            <Text style={styles.textTag}>SEGUNDA</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.tagDay}>
-            <Text style={styles.textTag}>Terça</Text>
+            <Text style={styles.textTag}>TERÇA</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.tagDay}>
-            <Text style={styles.textTag}>Quarta</Text>
+            <Text style={styles.textTag}>QUARTA</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.actionsTagsDays}>
           <TouchableOpacity style={styles.tagDay}>
-            <Text style={styles.textTag}>Quinta</Text>
+            <Text style={styles.textTag}>QUINTA</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.tagDay}>
-            <Text style={styles.textTag}>Sexta</Text>
+            <Text style={styles.textTag}>SEXTA</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.tagDay}>
-            <Text style={styles.textTag}>Sabado</Text>
+            <Text style={styles.textTag}>SABADO</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.tagDay}>
-            <Text style={styles.textTag}>Domingo</Text>
+            <Text style={styles.textTag}>DOMINGO</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.termsOfuse}>

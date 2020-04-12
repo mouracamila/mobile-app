@@ -29,7 +29,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: "#518F57",
     marginBottom: 10,
-    borderRadius: 16,
+    borderRadius: 10,
   },
 
   boxAdress: {
@@ -54,7 +54,7 @@ export default StyleSheet.create({
 
   actionsTags: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     alignItems: "center",
     marginBottom: 10,
   },
@@ -63,14 +63,14 @@ export default StyleSheet.create({
     backgroundColor: "#bbccb8",
     borderRadius: 16,
     height: 35,
-    width: "30%",
+    width: "auto",
     justifyContent: "center",
     alignItems: "center",
   },
 
   actionsTagsDays: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
     marginBottom: 8,
   },
@@ -79,7 +79,7 @@ export default StyleSheet.create({
     backgroundColor: "#bbccb8",
     borderRadius: 16,
     height: 35,
-    width: "20%",
+    width: "auto",
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
@@ -103,5 +103,6 @@ export default StyleSheet.create({
     height: 40,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 16,
   },
 });
