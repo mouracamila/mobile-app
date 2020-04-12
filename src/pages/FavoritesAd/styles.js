@@ -12,10 +12,9 @@ export default StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-  },
-
-  headerText: {
-    fontSize: 15,
-    color: "#737380",
+    borderBottomColor: "#518F57",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    paddingBottom: 10,
+    marginBottom: 10,
   },
 });

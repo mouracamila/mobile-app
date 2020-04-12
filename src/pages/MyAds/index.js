@@ -43,12 +43,13 @@ export default function MyAds() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+        <Text style={{ fontSize: 22 }}>Meus Anuncios</Text>
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#737380" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <Feather name="more-vertical" size={28} color="#737380" />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
 
       <SellerData seller={seller} />

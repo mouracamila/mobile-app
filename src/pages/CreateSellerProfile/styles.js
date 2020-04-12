@@ -17,36 +17,9 @@ export default StyleSheet.create({
     paddingBottom: 10,
   },
 
-  apresentation: {
-    fontWeight: "bold",
-    fontSize: 22,
-    color: "#bbccb8",
-    marginVertical: 10,
-  },
-
-  announcementImg: {
-    width: "100%",
-    height: "auto",
-    aspectRatio: 3 / 2,
-    marginTop: 16,
-  },
-
-  addPhoto: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#bbccb8",
-    marginBottom: 5,
-    padding: 5,
-  },
-
-  addPhotoText: {
-    marginLeft: 6,
-    color: "#ffff",
-  },
-
   description: {
     marginVertical: 8,
+    fontWeight: "bold",
   },
 
   textInput: {
@@ -59,18 +32,13 @@ export default StyleSheet.create({
     borderRadius: 16,
   },
 
-  textInputDescription: {
-    width: "100%",
-    height: "auto",
-    padding: 10,
-    borderWidth: 1,
-    borderColor: "#518F57",
-    marginBottom: 10,
-    borderRadius: 16,
+  boxAdress: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 
-  textInputValue: {
-    width: "20%",
+  adressInput: {
+    width: "auto",
     height: 40,
     padding: 10,
     borderWidth: 1,
@@ -84,33 +52,38 @@ export default StyleSheet.create({
     justifyContent: "space-between",
   },
 
-  action: {
-    backgroundColor: "#bbccb8",
-    borderRadius: 16,
-    height: 40,
-    width: "20%",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
-  actionText: {
-    color: "#FFF",
-  },
-
   actionsTags: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: 10,
   },
 
   actionTag: {
     backgroundColor: "#bbccb8",
     borderRadius: 16,
-    height: 40,
+    height: 35,
     width: "30%",
     justifyContent: "center",
     alignItems: "center",
+  },
+
+  actionsTagsDays: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 8,
+  },
+
+  tagDay: {
+    backgroundColor: "#bbccb8",
+    borderRadius: 16,
+    height: 35,
+    width: "20%",
+    justifyContent: "center",
+    alignItems: "center",
     alignSelf: "center",
+    marginHorizontal: 8,
   },
 
   textTag: {
@@ -118,17 +91,17 @@ export default StyleSheet.create({
     padding: 4,
   },
 
-  button: {
-    backgroundColor: "#bbccb8",
-    height: 50,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
   termsOfuse: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "stretch",
     marginVertical: 10,
+  },
+
+  button: {
+    backgroundColor: "#bbccb8",
+    height: 40,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

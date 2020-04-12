@@ -12,8 +12,8 @@ export default function Menu() {
     navigation.navigate("FavoritesAd");
   }
 
-  function navigateToMyAds() {
-    navigation.navigate("MyAds");
+  function navigateToAdList() {
+    navigation.navigate("AdList");
   }
 
   function navigateToCreateAd() {
@@ -26,7 +26,7 @@ export default function Menu() {
 
   return (
     <View style={styles.menu}>
-      <TouchableOpacity style={styles.menuIcon} onPress={navigateToMyAds}>
+      <TouchableOpacity style={styles.menuIcon} onPress={navigateToAdList}>
         <Feather name="grid" size={20} color="#737380" />
         <Text style={styles.menuText}>Anuncios</Text>
       </TouchableOpacity>
@@ -35,11 +35,6 @@ export default function Menu() {
         <Feather name="share" size={20} color="#737380" />
         <Text style={styles.menuText}>Anunciar</Text>
       </TouchableOpacity>
-
-      {/* <TouchableOpacity style={styles.menuIcon}>
-        <Feather name="settings" size={20} color="#737380" />
-        <Text style={styles.menuText}>Configurações</Text>
-      </TouchableOpacity> */}
 
       <TouchableOpacity style={styles.menuIcon} onPress={navigateToFavoritesAd}>
         <Feather name="heart" size={20} color="#737380" />

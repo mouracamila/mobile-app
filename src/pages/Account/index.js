@@ -14,24 +14,38 @@ export default function Account() {
     navigation.goBack();
   }
 
+  function navigateToCreateSellerProfile() {
+    navigation.navigate("CreateSellerProfile");
+  }
+
+  function navigateToMyAds() {
+    navigation.navigate("MyAds");
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
+        <Text style={{ fontSize: 22 }}>Minha conta</Text>
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#737380" />
-        </TouchableOpacity>
-        <Text>minha conta</Text>
-        <TouchableOpacity>
-          <Feather name="more-vertical" size={28} color="#737380" />
         </TouchableOpacity>
       </View>
       <ScrollView
         style={styles.announcementMore}
         showsVerticalScrollIndicator={false}
       >
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigateToCreateSellerProfile(navigateToCreateSellerProfile)
+          }
+        >
           <Text style={styles.apresentation}>Configurações de conta</Text>
           <Text>Gerencie informações sobre você e sua conta em geral.</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigateToMyAds(navigateToMyAds)}>
+          <Text style={styles.apresentation}>Configurar meus Anuncios</Text>
+          <Text>Gerencie seu anuncios</Text>
         </TouchableOpacity>
 
         <TouchableOpacity>
@@ -58,19 +72,19 @@ export default function Account() {
         <Text style={styles.apresentation}>About</Text>
 
         <TouchableOpacity>
-          <Text>Legal</Text>
+          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Legal</Text>
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Text>Licença</Text>
+          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Licença</Text>
         </TouchableOpacity>
 
-        <View>
-          <Text>Feira Local Versão</Text>
+        <View style={{ marginVertical: 4 }}>
+          <Text style={{ fontWeight: "bold" }}>Feira Local Versão</Text>
           <Text>1.0.0</Text>
         </View>
 
-        <Text>Log out</Text>
+        <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Log out</Text>
       </ScrollView>
     </View>
   );
