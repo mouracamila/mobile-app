@@ -22,6 +22,30 @@ export default function Account() {
     navigation.navigate("MyAds");
   }
 
+  function navigateToChangePassword() {
+    navigation.navigate("ChangePassword");
+  }
+
+  function navigateToEditAccounts() {
+    navigation.navigate("EditAccounts");
+  }
+
+  function navigateToLegal() {
+    navigation.navigate("Legal");
+  }
+
+  function navigateToGuidelines() {
+    navigation.navigate("Guidelines");
+  }
+
+  function navigateToTermsOfUse() {
+    navigation.navigate("TermsOfUse");
+  }
+
+  function navigateToAboutUs() {
+    navigation.navigate("AboutUs");
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -39,8 +63,12 @@ export default function Account() {
             navigateToCreateSellerProfile(navigateToCreateSellerProfile)
           }
         >
-          <Text style={styles.apresentation}>Configurações de conta</Text>
-          <Text>Gerencie informações sobre você e sua conta em geral.</Text>
+          <Text style={styles.apresentation}>
+            Criar ou editar conta de anunciante
+          </Text>
+          <Text>
+            Crie uma conta de anunciante e/ou gerencie suas informações.
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigateToMyAds(navigateToMyAds)}>
@@ -48,12 +76,16 @@ export default function Account() {
           <Text>Gerencie seu anuncios</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigateToEditAccounts(navigateToEditAccounts)}
+        >
           <Text style={styles.apresentation}>Configurações pessoais</Text>
           <Text>Edite seu nome, telefone, email e endereço.</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigateToChangePassword(navigateToChangePassword)}
+        >
           <Text style={styles.apresentation}>Segurança </Text>
           <Text>
             Mude sua senha e tenha outras ações para proteger sua conta.
@@ -71,12 +103,30 @@ export default function Account() {
 
         <Text style={styles.apresentation}>About</Text>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigateToAboutUs(navigateToAboutUs)}>
+          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>
+            Sobre Nós
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigateToLegal(navigateToLegal)}>
           <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Legal</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Licença</Text>
+        <TouchableOpacity
+          onPress={() => navigateToTermsOfUse(navigateToTermsOfUse)}
+        >
+          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>
+            Termos de Uso
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => navigateToGuidelines(navigateToGuidelines)}
+        >
+          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>
+            Diretrises
+          </Text>
         </TouchableOpacity>
 
         <View style={{ marginVertical: 4 }}>

@@ -16,6 +16,12 @@ import MyAds from "./pages/MyAds";
 import CreateAd from "./pages/CreateAd";
 import Account from "./pages/Account";
 import CreateSellerProfile from "./pages/CreateSellerProfile";
+import ChangePassword from "./pages/ChangePassword";
+import EditAccounts from "./pages/EditAccounts";
+import Legal from "./pages/Legal";
+import Guidelines from "./pages/Guidelines";
+import TermsOfUse from "./pages/TermsOfUse";
+import AboutUs from "./pages/AboutUs";
 
 export default function Routes() {
   const { auth, dispatch } = useAuthContext();
@@ -26,9 +32,9 @@ export default function Routes() {
     <NavigationContainer>
       <AppStack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={auth.isLoggedIn ? "AdList" : "Login"}
+        initialRouteName={auth.userToken ? "AdList" : "Login"}
       >
-        {auth.isLoggedIn ? (
+        {auth.userToken ? (
           <>
             <AppStack.Screen name="AdList" component={AdList} />
             <AppStack.Screen name="AdDetail" component={AdDetail} />
@@ -37,10 +43,16 @@ export default function Routes() {
             <AppStack.Screen name="MyAds" component={MyAds} />
             <AppStack.Screen name="CreateAd" component={CreateAd} />
             <AppStack.Screen name="Account" component={Account} />
+            <AppStack.Screen name="ChangePassword" component={ChangePassword} />
             <AppStack.Screen
               name="CreateSellerProfile"
               component={CreateSellerProfile}
             />
+            <AppStack.Screen name="EditAccounts" component={EditAccounts} />
+            <AppStack.Screen name="Legal" component={Legal} />
+            <AppStack.Screen name="Guidelines" component={Guidelines} />
+            <AppStack.Screen name="TermsOfUse" component={TermsOfUse} />
+            <AppStack.Screen name="AboutUs" component={AboutUs} />
           </>
         ) : (
           <>
