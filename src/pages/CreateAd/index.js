@@ -24,10 +24,6 @@ export default function CreateAd(props) {
     setIsEnabled((previousState) => !previousState);
   }
 
-  function navigateBack() {
-    navigation.goBack();
-  }
-
   function onPublish() {
     if (isEnabled) {
       alert("hey");
@@ -38,9 +34,6 @@ export default function CreateAd(props) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={{ fontSize: 22 }}>Criando anuncio</Text>
-        <TouchableOpacity onPress={navigateBack}>
-          <Feather name="arrow-left" size={28} color="#737380" />
-        </TouchableOpacity>
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
