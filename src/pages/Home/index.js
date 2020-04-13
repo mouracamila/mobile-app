@@ -5,8 +5,6 @@ import { Feather } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
-import styles from "./styles";
-
 import AdList from "../AdList";
 import FavoritesAd from "../FavoritesAd";
 import CreateAd from "../CreateAd";
@@ -42,15 +40,15 @@ export default function Home() {
             return (
               <Feather
                 name={icon}
-                size={28}
-                color={focused ? "tomato" : "#737380"}
+                size={22}
+                color={focused ? "#518F57" : "#737380"}
               />
             );
           },
         };
       }}
       tabBarOptions={{
-        activeTintColor: "tomato",
+        activeTintColor: "#518F57",
         inactiveTintColor: "gray",
       }}
     >
