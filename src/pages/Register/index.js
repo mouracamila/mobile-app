@@ -53,6 +53,7 @@ export default function Register() {
           placeholder="Name"
           value={name}
           onChangeText={setName}
+          autoCompleteType="name"
         />
 
         <TextInput
@@ -60,6 +61,7 @@ export default function Register() {
           placeholder="E-mail"
           value={email}
           onChangeText={setEmail}
+          autoCompleteType="email"
         />
 
         <TextInput
@@ -67,6 +69,7 @@ export default function Register() {
           placeholder="Senha"
           value={password}
           onChangeText={setPassword}
+          autoCompleteType="password"
           secureTextEntry
         />
 
