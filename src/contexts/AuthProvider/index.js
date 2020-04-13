@@ -6,6 +6,7 @@ import React, {
   useEffect,
 } from "react";
 import { AsyncStorage } from "react-native";
+import api from "../../services/api";
 
 const AuthContext = createContext();
 
@@ -45,15 +46,15 @@ function AuthProvider(props) {
     signIn: async (data) => {
       const { email, password } = data;
 
-      // await axios
-      //   .post(`http://192.168.1.4:3333/sessions`, { email, password })
-      //   .then((resp) => {
-      //     console.log(resp);
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //   });
-      dispatch({ type: "SIGN_IN", token: "fake-token" });
+      await api
+        .post("sessions", { email, password })
+        .then(({ data }) => {
+          dispatch({ type: "SIGN_IN", token: data.token });
+        })
+        .catch((err) => {
+          alert("Ops! Não foi possível logar.");
+          console.log(err);
+        });
     },
     // Logout
     signOut: () => dispatch({ type: "SIGN_OUT" }),
