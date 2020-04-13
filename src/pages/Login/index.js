@@ -1,14 +1,13 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { View, Image, TextInput, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { useAuthContext } from "../../contexts/AuthProvider";
 
 // import { NavigationContainer } from "@react-navigation/native";
 // import { createStackNavigator } from "@react-navigation/stack";
 
 // import logoImg from "../../assets/logo.png";
-
-import { AuthContext } from "../../routes";
 
 import styles from "./styles";
 import logoImg from "../../assets/logo.png";
@@ -22,10 +21,10 @@ function SplashScreen() {
 }
 
 export default function Login() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const { signIn } = React.useContext(AuthContext);
+  const { signIn } = useAuthContext();
 
   const navigation = useNavigation();
 

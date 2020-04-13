@@ -2,14 +2,14 @@ import React, { useState, useContext } from "react";
 import { View, Image, TextInput, Text, Switch } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
-import { AuthContext } from "../../routes";
+import { useAuthContext } from "../../contexts/AuthProvider";
 
 import styles from "./styles";
 
 import logoImg from "../../assets/logo.png";
 
 export default function Register() {
-  const { signUp } = useContext(AuthContext);
+  const { signUp } = useAuthContext();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
