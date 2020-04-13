@@ -10,10 +10,6 @@ import styles from "./styles";
 export default function Account() {
   const navigation = useNavigation();
 
-  function navigateBack() {
-    navigation.goBack();
-  }
-
   function navigateToCreateSellerProfile() {
     navigation.navigate("CreateSellerProfile");
   }
