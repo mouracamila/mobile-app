@@ -11,10 +11,6 @@ export default function Account() {
   const { signOut } = useAuthContext();
   const navigation = useNavigation();
 
-  function navigateBack() {
-    navigation.goBack();
-  }
-
   function navigateToCreateSellerProfile() {
     navigation.navigate("CreateSellerProfile");
   }
@@ -51,9 +47,6 @@ export default function Account() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={{ fontSize: 22 }}>Minha conta</Text>
-        <TouchableOpacity onPress={navigateBack}>
-          <Feather name="arrow-left" size={28} color="#737380" />
-        </TouchableOpacity>
       </View>
       <ScrollView
         style={styles.announcementMore}

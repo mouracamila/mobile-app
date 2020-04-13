@@ -123,6 +123,7 @@ export default StyleSheet.create({
     height: 50,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 16,
   },
 
   termsOfuse: {

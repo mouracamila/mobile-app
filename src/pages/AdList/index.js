@@ -5,7 +5,6 @@ import { View, FlatList, Image, Text, TouchableOpacity } from "react-native";
 import styles from "./styles";
 
 import Announcement from "../../components/Announcement";
-import Menu from "../../components/Menu";
 
 import logoImg from "../../assets/logo.png";
 
@@ -46,7 +45,6 @@ export default function AdList() {
           </View>
         )}
       />
-      <Menu />
     </View>
   );
 }
