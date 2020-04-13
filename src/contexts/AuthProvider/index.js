@@ -45,15 +45,15 @@ function AuthProvider(props) {
     signIn: async (data) => {
       const { email, password } = data;
 
-      await axios
-        .post(`http://192.168.1.4:3333/sessions`, { email, password })
-        .then((resp) => {
-          console.log(resp);
-          dispatch({ type: "SIGN_IN", token: userToken });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      // await axios
+      //   .post(`http://192.168.1.4:3333/sessions`, { email, password })
+      //   .then((resp) => {
+      //     console.log(resp);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+      dispatch({ type: "SIGN_IN", token: "fake-token" });
     },
     // Logout
     signOut: () => dispatch({ type: "SIGN_OUT" }),
@@ -89,7 +89,6 @@ function AuthProvider(props) {
   }, []);
 
   const authData = { ...authContext, auth, dispatch };
-  console.log(authData);
 
   return <AuthContext.Provider value={authData} {...props} />;
 }
