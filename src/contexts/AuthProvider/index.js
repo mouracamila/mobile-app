@@ -60,9 +60,17 @@ function AuthProvider(props) {
     signOut: () => dispatch({ type: "SIGN_OUT" }),
     // Register
     signUp: async (data) => {
-      let userToken = null;
+      const { name, email, password } = data;
 
-      dispatch({ type: "SIGN_IN", token: userToken });
+      await api
+        .post("users", { name, email, password })
+        .then(({ data }) => {
+          dispatch({ type: "SIGN_IN", token: data.token });
+        })
+        .catch((err) => {
+          alert("Ops! Não foi possível criar a conta.");
+          console.log(err);
+        });
     },
   }));
 

@@ -49,6 +49,7 @@ export default function Login() {
           placeholder="E-mail"
           value={email}
           onChangeText={setEmail}
+          autoCompleteType="email"
         />
 
         <TextInput
@@ -57,6 +58,7 @@ export default function Login() {
           value={password}
           onChangeText={setPassword}
           secureTextEntry
+          autoCompleteType="password"
         />
 
         <TouchableOpacity>

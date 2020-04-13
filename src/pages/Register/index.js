@@ -21,9 +21,9 @@ export default function Register() {
 
   const navigation = useNavigation();
 
-  function handleSignUp() {
+  async function handleSignUp() {
     if (isEnabled) {
-      signUp({
+      await signUp({
         name,
         email,
         password,
