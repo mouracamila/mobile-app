@@ -2,12 +2,13 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
-
 import { ScrollView } from "react-native-gesture-handler";
+import { useAuthContext } from "../../contexts/AuthProvider";
 
 import styles from "./styles";
 
 export default function Account() {
+  const { signOut } = useAuthContext();
   const navigation = useNavigation();
 
   function navigateBack() {
@@ -58,11 +59,7 @@ export default function Account() {
         style={styles.announcementMore}
         showsVerticalScrollIndicator={false}
       >
-        <TouchableOpacity
-          onPress={() =>
-            navigateToCreateSellerProfile(navigateToCreateSellerProfile)
-          }
-        >
+        <TouchableOpacity onPress={() => navigateToCreateSellerProfile()}>
           <Text style={styles.apresentation}>
             Criar ou editar conta de anunciante
           </Text>
@@ -71,21 +68,17 @@ export default function Account() {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigateToMyAds(navigateToMyAds)}>
+        <TouchableOpacity onPress={() => navigateToMyAds()}>
           <Text style={styles.apresentation}>Configurar meus Anuncios</Text>
           <Text>Gerencie seu anuncios</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={() => navigateToEditAccounts(navigateToEditAccounts)}
-        >
+        <TouchableOpacity onPress={() => navigateToEditAccounts()}>
           <Text style={styles.apresentation}>Configurações pessoais</Text>
           <Text>Edite seu nome, telefone, email e endereço.</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={() => navigateToChangePassword(navigateToChangePassword)}
-        >
+        <TouchableOpacity onPress={() => navigateToChangePassword()}>
           <Text style={styles.apresentation}>Segurança </Text>
           <Text>
             Mude sua senha e tenha outras ações para proteger sua conta.
@@ -103,27 +96,23 @@ export default function Account() {
 
         <Text style={styles.apresentation}>About</Text>
 
-        <TouchableOpacity onPress={() => navigateToAboutUs(navigateToAboutUs)}>
+        <TouchableOpacity onPress={() => navigateToAboutUs()}>
           <Text style={{ fontWeight: "bold", marginVertical: 4 }}>
             Sobre Nós
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigateToLegal(navigateToLegal)}>
+        <TouchableOpacity onPress={() => navigateToLegal()}>
           <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Legal</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={() => navigateToTermsOfUse(navigateToTermsOfUse)}
-        >
+        <TouchableOpacity onPress={() => navigateToTermsOfUse()}>
           <Text style={{ fontWeight: "bold", marginVertical: 4 }}>
             Termos de Uso
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={() => navigateToGuidelines(navigateToGuidelines)}
-        >
+        <TouchableOpacity onPress={() => navigateToGuidelines()}>
           <Text style={{ fontWeight: "bold", marginVertical: 4 }}>
             Diretrises
           </Text>
@@ -134,7 +123,9 @@ export default function Account() {
           <Text>1.0.0</Text>
         </View>
 
-        <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Log out</Text>
+        <TouchableOpacity onPress={() => signOut()}>
+          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Log out</Text>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   );
