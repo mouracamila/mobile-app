@@ -32,8 +32,8 @@ export default StyleSheet.create({
   },
 
   announcementDescription: {
-    fontSize: 16,
-    color: "#737380",
+    fontSize: 15,
+    // color: "#737380",
   },
 
   announcementHowMuch: {
