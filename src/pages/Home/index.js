@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator();
 import AdList from "../AdList";
 import FavoritesAd from "../FavoritesAd";
 import CreateAd from "../CreateAd";
-import Account from "../Account";
+import Profile from "../Profile";
 
 export default function Home() {
   const TabDescription = {
@@ -24,8 +24,8 @@ export default function Home() {
       title: "Favoritos",
       icon: "heart",
     },
-    Account: {
-      title: "Conta",
+    Profile: {
+      title: "Profile",
       icon: "user",
     },
   };
@@ -55,7 +55,7 @@ export default function Home() {
       <Tab.Screen name="AdList" component={AdList} />
       <Tab.Screen name="FavoritesAd" component={FavoritesAd} />
       <Tab.Screen name="CreateAd" component={CreateAd} />
-      <Tab.Screen name="Account" component={Account} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 }
