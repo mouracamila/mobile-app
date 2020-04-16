@@ -19,7 +19,7 @@ const AccountStack = createStackNavigator();
 export default function MyAccount() {
   return (
     <AccountStack.Navigator>
-      <AccountStack.Screen name="Minha conta" component={MyAccountMenu} />
+      <AccountStack.Screen name="Configurações" component={MyAccountMenu} />
       <AccountStack.Screen
         name="CreateSellerProfile"
         component={CreateSellerProfile}

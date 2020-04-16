@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 import Home from "./pages/Home";
+import MyAccount from "./pages/MyAccount";
 
 export default function Routes() {
   const { auth } = useAuthContext();
@@ -23,6 +24,7 @@ export default function Routes() {
         {auth.isLoggedIn ? (
           <>
             <AppStack.Screen name="Home" component={Home} />
+            <AppStack.Screen name="MyAccount" component={MyAccount} />
           </>
         ) : (
           <>

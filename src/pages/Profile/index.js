@@ -1,22 +1,29 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 import img from "../../assets/img.png";
 
 import styles from "./styles";
 
 export default function Profile() {
+  const navigation = useNavigation();
+
+  function navigateToMyAccount() {
+    navigation.navigate("MyAccount");
+  }
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text>Hello Profile</Text>
-        <TouchableOpacity onPress={() => navigateMyAccount()}>
+        <Text>Profile</Text>
+
+        <TouchableOpacity onPress={() => navigateToMyAccount()}>
           <Feather name="settings" size={22} color="#737380" />
         </TouchableOpacity>
       </View>
-      <View style={styles.userName}>
-        <Text>Hello Profile User</Text>
+      <View style={styles.userNamebox}>
+        <Text style={styles.userName}>Hello Profile User</Text>
         <Feather name="user" size={60} color="#737380" />
       </View>
       <View>
@@ -30,19 +37,19 @@ export default function Profile() {
       </Text>
       <View style={styles.favoriteSeller}>
         <TouchableOpacity>
-          <Feather name="circle" size={60} color="#737380" />
+          <Feather name="user" size={55} color="#737380" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Feather name="circle" size={60} color="#737380" />
+          <Feather name="user" size={55} color="#737380" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Feather name="circle" size={60} color="#737380" />
+          <Feather name="user" size={55} color="#737380" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Feather name="circle" size={60} color="#737380" />
+          <Feather name="user" size={55} color="#737380" />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Feather name="circle" size={60} color="#737380" />
+          <Feather name="user" size={55} color="#737380" />
         </TouchableOpacity>
       </View>
       <Text style={{ fontWeight: "bold", marginTop: 16 }}>Meus anuncios</Text>

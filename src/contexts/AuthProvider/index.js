@@ -46,15 +46,16 @@ function AuthProvider(props) {
     signIn: async (data) => {
       const { email, password } = data;
 
-      await api
-        .post("sessions", { email, password })
-        .then(({ data }) => {
-          dispatch({ type: "SIGN_IN", token: data.token });
-        })
-        .catch((err) => {
-          alert("Ops! Não foi possível logar.");
-          console.log(err);
-        });
+      dispatch({ type: "SIGN_IN", token: "faketoken" });
+      // await api
+      //   .post("sessions", { email, password })
+      //   .then(({ data }) => {
+      //     dispatch({ type: "SIGN_IN", token: data.token });
+      //   })
+      //   .catch((err) => {
+      //     alert("Ops! Não foi possível logar.");
+      //     console.log(err);
+      //   });
     },
     // Logout
     signOut: () => dispatch({ type: "SIGN_OUT" }),

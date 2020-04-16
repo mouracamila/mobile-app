@@ -45,9 +45,6 @@ export default function Account() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={{ fontSize: 22 }}>Minha conta</Text>
-      </View>
       <ScrollView
         style={styles.announcementMore}
         showsVerticalScrollIndicator={false}

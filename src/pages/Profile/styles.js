@@ -17,17 +17,23 @@ export default StyleSheet.create({
     paddingBottom: 10,
   },
 
-  userName: {
+  userNamebox: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginTop: 10,
+  },
+
+  userName: {
+    fontSize: 20,
+    fontWeight: "bold",
   },
 
   favoriteSeller: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginVertical: 10,
+    // marginVertical: 10,
   },
 
   myAds: {

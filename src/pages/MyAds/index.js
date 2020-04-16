@@ -5,7 +5,7 @@ import { View, FlatList, Image, Text, TouchableOpacity } from "react-native";
 
 import styles from "./styles";
 import Announcement from "../../components/Announcement";
-import Menu from "../../components/Menu";
+// import Menu from "../../components/Menu";
 import SellerData from "../../components/SellerData";
 
 export default function MyAds() {
@@ -71,7 +71,7 @@ export default function MyAds() {
           </View>
         )}
       />
-      <Menu />
+      {/* <Menu /> */}
     </View>
   );
 }
