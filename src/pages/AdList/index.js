@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   AsyncStorage,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
+
 import api from "../../services/api";
 
 import styles from "./styles";
