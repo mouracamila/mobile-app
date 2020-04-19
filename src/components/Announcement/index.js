@@ -5,8 +5,6 @@ import { View, Text, Image } from "react-native";
 
 import styles from "./styles";
 
-import img from "../../assets/img.png";
-
 export default function Announcement(props) {
   const { item } = props.item;
 
@@ -15,7 +13,12 @@ export default function Announcement(props) {
 
   return (
     <View style={styles.announcement}>
-      <Image source={img} style={styles.announcementImg} />
+      <Image
+        source={{
+          uri: "https://www.placecage.com/640/480",
+        }}
+        style={styles.announcementImg}
+      />
 
       <View style={styles.announcementContent}>
         <Text style={styles.announcementProduct}>{item.title}</Text>
