@@ -5,15 +5,15 @@ import * as MailComposer from "expo-mail-composer";
 import styles from "./styles";
 
 export default function SellerContact(props) {
-  const { item } = props;
+  const { item } = props.item;
+  const seller = item.user;
 
-  const message =
-    "Olá Ricardo, estou entrando em contato pois estou interessada em seus tomates.";
+  const message = `Olá ${seller.name}, estou entrando em contato pois estou interessada em seus ${item.title}.`;
 
   function sendMail() {
     MailComposer.composeAsync({
-      subject: "Produto: Tomate",
-      recipients: ["ricardo@luders.com.br"],
+      subject: `Produto: ${item.title}`,
+      recipients: [seller.email],
       body: message,
     });
   }

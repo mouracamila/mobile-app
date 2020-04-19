@@ -9,8 +9,10 @@ import SellerContact from "../../components/SellerContact";
 
 import { ScrollView } from "react-native-gesture-handler";
 
-export default function AdDetail() {
+export default function AdDetail({ route }) {
   const navigation = useNavigation();
+  const { announcement } = route.params;
+  const seller = announcement.item.user;
 
   function navigateBack() {
     navigation.goBack();
@@ -38,7 +40,7 @@ export default function AdDetail() {
           style={styles.actionMoreInformation}
           onPress={() => navigateToSellerProfile(navigateToSellerProfile)}
         >
-          <Text style={styles.sellerName}>Nome do Vendedor</Text>
+          <Text style={styles.sellerName}>{seller.name}</Text>
         </TouchableOpacity>
         <Text style={styles.sellerCity}>Cidade do vendedor</Text>
       </View>
@@ -60,7 +62,7 @@ export default function AdDetail() {
         style={styles.announcementMore}
         showsVerticalScrollIndicator={false}
       >
-        <Announcement item={{ title: "Tomate" }} />
+        <Announcement item={announcement} />
 
         <TouchableOpacity
           style={styles.detailsButton}
@@ -73,7 +75,7 @@ export default function AdDetail() {
         </TouchableOpacity>
       </ScrollView>
 
-      <SellerContact item={{ title: "contact" }} />
+      <SellerContact item={announcement} />
     </View>
   );
 }
