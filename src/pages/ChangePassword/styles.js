@@ -8,15 +8,6 @@ export default StyleSheet.create({
     paddingTop: Constants.statusBarHeight + 20,
   },
 
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderBottomColor: "#518F57",
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingBottom: 10,
-  },
-
   apresentation: {
     fontWeight: "bold",
     fontSize: 22,
@@ -33,5 +24,13 @@ export default StyleSheet.create({
     borderColor: "#518F57",
     marginVertical: 5,
     borderRadius: 10,
+  },
+
+  button: {
+    backgroundColor: "#bbccb8",
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 30,
   },
 });

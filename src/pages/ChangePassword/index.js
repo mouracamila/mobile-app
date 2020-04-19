@@ -13,15 +13,6 @@ export default function ChangePassword() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={navigateBack}>
-          <Feather name="x" size={28} color="#737380" />
-        </TouchableOpacity>
-        <Text style={{ fontSize: 22 }}>Mudar Senha</Text>
-        <TouchableOpacity onPress={navigateBack}>
-          <Feather name="check" size={28} color="#737380" />
-        </TouchableOpacity>
-      </View>
       <TextInput
         style={styles.textInput}
         placeholder="Senha Atual"
@@ -41,6 +32,12 @@ export default function ChangePassword() {
         Se vc esqueceu sua senha, você pode recuperar via{" "}
         <Text style={{ fontWeight: "bold" }}>E-mail</Text>
       </Text>
+
+      <TouchableOpacity>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>SALVAR ALTERAÇÕES </Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }

@@ -49,73 +49,105 @@ export default function Account() {
         style={styles.announcementMore}
         showsVerticalScrollIndicator={false}
       >
-        <TouchableOpacity onPress={() => navigateToCreateSellerProfile()}>
-          <Text style={styles.apresentation}>
-            Criar ou editar conta de anunciante
+        <View style={{ marginTop: 16 }}>
+          <TouchableOpacity
+            style={styles.alignIcons}
+            onPress={() => navigateToCreateSellerProfile()}
+          >
+            <Feather name="edit-3" size={20} color="#000000" />
+            <Text style={styles.apresentation}>
+              Criar/editar conta de anunciante
+            </Text>
+          </TouchableOpacity>
+          <Text style={{ marginLeft: 28 }}>
+            Edite seu nome, telefone, email e endereço.
           </Text>
-          <Text>
-            Crie uma conta de anunciante e/ou gerencie suas informações.
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToMyAds()}>
-          <Text style={styles.apresentation}>Configurar meus Anuncios</Text>
-          <Text>Gerencie seu anuncios</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToEditAccounts()}>
-          <Text style={styles.apresentation}>Configurações pessoais</Text>
-          <Text>Edite seu nome, telefone, email e endereço.</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToChangePassword()}>
-          <Text style={styles.apresentation}>Segurança </Text>
-          <Text>
-            Mude sua senha e tenha outras ações para proteger sua conta.
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.apresentation}>Localização</Text>
-          <Text>Gerencie sua Localização.</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text style={styles.apresentation}>Notificações</Text>
-          <Text>Decida como o Feira local poderá se comunicar com você.</Text>
-        </TouchableOpacity>
-
-        <Text style={styles.apresentation}>About</Text>
-
-        <TouchableOpacity onPress={() => navigateToAboutUs()}>
-          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>
-            Sobre Nós
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToLegal()}>
-          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Legal</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToTermsOfUse()}>
-          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>
-            Termos de Uso
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToGuidelines()}>
-          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>
-            Diretrises
-          </Text>
-        </TouchableOpacity>
-
-        <View style={{ marginVertical: 4 }}>
-          <Text style={{ fontWeight: "bold" }}>Feira Local Versão</Text>
-          <Text>1.0.0</Text>
         </View>
 
-        <TouchableOpacity onPress={() => signOut()}>
-          <Text style={{ fontWeight: "bold", marginVertical: 4 }}>Log out</Text>
-        </TouchableOpacity>
+        <View style={{ marginTop: 16 }}>
+          <TouchableOpacity
+            style={styles.alignIcons}
+            onPress={() => navigateToMyAds()}
+          >
+            <Feather name="grid" size={20} color="#000000" />
+            <Text style={styles.apresentation}>Configurar meus Anuncios</Text>
+          </TouchableOpacity>
+          <Text style={{ marginLeft: 28 }}>Gerencie seu anuncios</Text>
+        </View>
+
+        <View style={{ marginTop: 16 }}>
+          <TouchableOpacity
+            style={styles.alignIcons}
+            onPress={() => navigateToEditAccounts()}
+          >
+            <Feather name="user" size={20} color="#000000" />
+            <Text style={styles.apresentation}>Configurações pessoais</Text>
+          </TouchableOpacity>
+          <Text style={{ marginLeft: 28 }}>
+            Edite seu nome, telefone, email e endereço.
+          </Text>
+        </View>
+
+        <View style={{ marginTop: 16 }}>
+          <TouchableOpacity
+            style={styles.alignIcons}
+            onPress={() => navigateToChangePassword()}
+          >
+            <Feather name="lock" size={20} color="#000000" />
+            <Text style={styles.apresentation}>Segurança</Text>
+          </TouchableOpacity>
+          <Text style={{ marginLeft: 28 }}>
+            Mude sua senha e tenha outras ações para proteger sua conta.
+          </Text>
+        </View>
+
+        <View style={{ marginTop: 16 }}>
+          <TouchableOpacity
+            style={styles.alignIcons}
+            // onPress={() => navigateToChangePassword()}
+          >
+            <Feather name="map-pin" size={20} color="#000000" />
+            <Text style={styles.apresentation}>Localização</Text>
+          </TouchableOpacity>
+          <Text style={{ marginLeft: 28 }}>Gerencie sua Localização.</Text>
+        </View>
+
+        <View style={{ marginTop: 16 }}>
+          <TouchableOpacity
+            style={styles.alignIcons}
+            // onPress={() => navigateToChangePassword()}
+          >
+            <Feather name="bell" size={20} color="#000000" />
+            <Text style={styles.apresentation}>Notificações</Text>
+          </TouchableOpacity>
+          <Text style={{ marginLeft: 28 }}>
+            Decida como o Feira local poderá se comunicar com você.
+          </Text>
+        </View>
+
+        <View style={styles.about}>
+          <TouchableOpacity onPress={() => navigateToTermsOfUse()}>
+            <Text style={{ marginVertical: 2, marginTop: 40 }}>
+              Termos de Uso
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigateToAboutUs()}>
+            <Text style={{ marginVertical: 2 }}>Sobre Nós</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigateToGuidelines()}>
+            <Text style={{ marginVertical: 2 }}>Diretrises</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigateToLegal()}>
+            <Text style={{ marginVertical: 2 }}>Legal</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.logOut} onPress={() => signOut()}>
+            <Text style={{ marginRight: 5 }}>Log out</Text>
+            <Feather name="log-out" size={16} color="#000000" />
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     </View>
   );
