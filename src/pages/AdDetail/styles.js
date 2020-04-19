@@ -5,7 +5,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 16,
-    paddingTop: Constants.statusBarHeight + 20,
+    paddingTop: Constants.statusBarHeight + 5,
   },
 
   header: {
@@ -26,6 +26,17 @@ export default StyleSheet.create({
   sellerCity: {
     fontSize: 12,
     color: "#bbccb8",
+  },
+
+  sellerInfo: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 5,
+  },
+
+  sellerNameCity: {
+    flexDirection: "column",
   },
 
   sellerTags: {
