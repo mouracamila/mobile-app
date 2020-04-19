@@ -13,12 +13,6 @@ export default function ChangePassword() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={{ fontSize: 22 }}>Configurar Conta</Text>
-        <TouchableOpacity onPress={navigateBack}>
-          <Feather name="arrow-left" size={28} color="#737380" />
-        </TouchableOpacity>
-      </View>
       <Text style={styles.description}>Nome</Text>
       <TextInput
         style={styles.textInput}
@@ -38,7 +32,7 @@ export default function ChangePassword() {
         placeholder="Exemple@exemple.com"
         secureTextEntry
       />
-      <Text style={styles.description}>Numero de telefone</Text>
+      <Text style={styles.description}>Telefone para contato</Text>
       <TextInput
         style={styles.textInput}
         placeholder="666 666 666"
@@ -52,7 +46,7 @@ export default function ChangePassword() {
       </TouchableOpacity>
 
       <TouchableOpacity>
-        <Text style={{ fontWeight: "bold", marginVertical: 30 }}>
+        <Text style={styles.desativateAccount}>
           Disabilitar a conta temporatiamente{" "}
         </Text>
       </TouchableOpacity>

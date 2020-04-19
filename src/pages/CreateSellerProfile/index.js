@@ -13,25 +13,15 @@ export default function CreateSellerProfile() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
-  function navigateBack() {
-    navigation.goBack();
-  }
-
   function navigateMore() {}
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={{ fontSize: 22 }}>Conta de anunciante</Text>
-        <TouchableOpacity onPress={navigateBack}>
-          <Feather name="arrow-left" size={28} color="#737380" />
-        </TouchableOpacity>
-      </View>
-      <ScrollView>
-        <Text style={styles.description}>Seu Nome</Text>
-        <TextInput style={styles.textInput} placeholder="Nome" />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Text style={styles.description}>Nome</Text>
+        <TextInput style={styles.textInput} placeholder="Nome comercial" />
 
-        <Text style={styles.description}>Seu endereço</Text>
+        <Text style={styles.description}>Endereço:</Text>
 
         <View style={styles.boxAdress}>
           <View>
@@ -43,20 +33,20 @@ export default function CreateSellerProfile() {
             <Text style={styles.endereço}>Cidade</Text>
             <TextInput
               style={styles.adressInput}
-              placeholder="Adicione sua cidade"
+              placeholder="Nome da sua cidade"
             />
           </View>
 
           <View>
             <Text style={styles.endereço}>UF</Text>
-            <TextInput style={styles.adressInput} placeholder="LF" />
+            <TextInput style={styles.adressInput} placeholder="UF" />
           </View>
         </View>
 
-        <Text style={styles.description}>Numero do celular</Text>
+        <Text style={styles.description}>Telefone para contato</Text>
         <TextInput style={styles.textInput} placeholder="000 000 000 000" />
 
-        <Text style={styles.description}>Seu email</Text>
+        <Text style={styles.description}>Email para contato</Text>
         <TextInput style={styles.textInput} placeholder="exemplo@exemplo.com" />
 
         <Text style={styles.description}>Informação sobre pagamento</Text>

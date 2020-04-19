@@ -13,6 +13,7 @@ import ChangePassword from "../ChangePassword";
 import Guidelines from "../Guidelines";
 import TermsOfUse from "../TermsOfUse";
 import AboutUs from "../AboutUs";
+import Legal from "../Legal";
 
 const AccountStack = createStackNavigator();
 
@@ -30,6 +31,7 @@ export default function MyAccount() {
       <AccountStack.Screen name="Guidelines" component={Guidelines} />
       <AccountStack.Screen name="TermsOfUse" component={TermsOfUse} />
       <AccountStack.Screen name="AboutUs" component={AboutUs} />
+      <AccountStack.Screen name="Legal" component={Legal} />
     </AccountStack.Navigator>
   );
 }

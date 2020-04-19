@@ -8,9 +8,11 @@ const AppStack = createStackNavigator();
 // Pages
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-
 import Home from "./pages/Home";
 import MyAccount from "./pages/MyAccount";
+import AdDetail from "./pages/AdDetail";
+import SellerProfile from "./pages/SellerProfile";
+import Legal from "./pages/Legal";
 
 export default function Routes() {
   const { auth } = useAuthContext();
@@ -25,6 +27,9 @@ export default function Routes() {
           <>
             <AppStack.Screen name="Home" component={Home} />
             <AppStack.Screen name="MyAccount" component={MyAccount} />
+            <AppStack.Screen name="AdDetail" component={AdDetail} />
+            <AppStack.Screen name="SellerProfile" component={SellerProfile} />
+            <AppStack.Screen name="Legal" component={Legal} />
           </>
         ) : (
           <>

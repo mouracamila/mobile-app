@@ -42,13 +42,6 @@ export default function MyAds() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={{ fontSize: 22 }}>Meu perfil de vendedor</Text>
-        <TouchableOpacity onPress={navigateBack}>
-          <Feather name="more-vertical" size={28} color="#737380" />
-        </TouchableOpacity>
-      </View>
-
       <SellerData seller={seller} />
 
       <Text style={styles.apresentation}>
