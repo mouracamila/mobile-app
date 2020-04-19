@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, FlatList, Image, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  FlatList,
+  Image,
+  Text,
+  TouchableOpacity,
+  AsyncStorage,
+} from "react-native";
+import { Feather } from "@expo/vector-icons";
+import api from "../../services/api";
 
 import styles from "./styles";
 
@@ -11,8 +20,31 @@ import logoImg from "../../assets/logo.png";
 export default function AdList() {
   const navigation = useNavigation();
 
-  function navigateToDetail() {
-    navigation.navigate("AdDetail");
+  // States
+  const [announcements, setAnnouncements] = useState([]);
+
+  async function loadData() {
+    const userToken = await AsyncStorage.getItem("userToken");
+    await api
+      .get("advertisements", {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
+      })
+      .then(({ data }) => {
+        setAnnouncements(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  function navigateToDetail(announcement) {
+    navigation.navigate("AdDetail", { announcement });
   }
 
   return (
@@ -20,27 +52,22 @@ export default function AdList() {
       <View style={styles.header}>
         <Image source={logoImg} />
         <Text style={styles.headerText}>
-          Total de <Text style={styles.headerTextBold}>0 anucios</Text>.
+          Total de <Text style={{ fontWeight: "bold" }}>0 anucios</Text>
         </Text>
       </View>
 
-      <Text style={styles.title}> Bem Vindo! </Text>
-      <Text style={styles.description}>
-        Entre em contato com o vendedor clicando no anuncio{" "}
-      </Text>
-
       <FlatList
-        data={[1, 2, 3]}
+        data={announcements}
         style={styles.announcementList}
-        keyExtractor={(announcement) => String(announcement)}
+        keyExtractor={(announcement) => String(announcement.id)}
         showsVerticalScrollIndicator={false}
-        renderItem={() => (
+        renderItem={(announcement) => (
           <View style={styles.announcementList}>
             <TouchableOpacity
               style={styles.detailsButton}
-              onPress={navigateToDetail}
+              onPress={() => navigateToDetail(announcement)}
             >
-              <Announcement item={{ title: "Tomate" }} />
+              <Announcement item={announcement} />
             </TouchableOpacity>
           </View>
         )}
