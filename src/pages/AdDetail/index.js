@@ -2,6 +2,7 @@ import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, TouchableOpacity } from "react-native";
+import { Avatar } from "react-native-elements";
 
 import styles from "./styles";
 import Announcement from "../../components/Announcement";
@@ -35,14 +36,22 @@ export default function AdDetail({ route }) {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.sellerInformation}>
+      <View style={styles.sellerInfo}>
         <TouchableOpacity
-          style={styles.actionMoreInformation}
+          style={styles.sellerNameCity}
           onPress={() => navigateToSellerProfile(navigateToSellerProfile)}
         >
           <Text style={styles.sellerName}>{seller.name}</Text>
+          <Text style={styles.sellerCity}>Cidade do vendedor</Text>
         </TouchableOpacity>
-        <Text style={styles.sellerCity}>Cidade do vendedor</Text>
+
+        <Avatar
+          size="large"
+          rounded
+          source={{
+            uri: "https://www.placecage.com/640/360",
+          }}
+        />
       </View>
 
       <Text style={styles.sellerTags}>ACEITO CARTÕES - ENTREGO </Text>
