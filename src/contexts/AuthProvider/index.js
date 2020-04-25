@@ -46,10 +46,21 @@ function AuthProvider(props) {
     signIn: async (data) => {
       const { email, password } = data;
 
-      dispatch({ type: "SIGN_IN", token: "faketoken" });
+      // REMOVER
+      const userToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTU4NzI5ODU3M30.CSAQfH4VMoHx-P70VATHBRb_9_QE2pFnP-uFaaHd9oY";
+
+      AsyncStorage.setItem("userToken", userToken);
+      dispatch({
+        type: "SIGN_IN",
+        token: userToken,
+      });
+      // REMOVER
+
       // await api
       //   .post("sessions", { email, password })
       //   .then(({ data }) => {
+      //     AsyncStorage.setItem("userToken", data.token);
       //     dispatch({ type: "SIGN_IN", token: data.token });
       //   })
       //   .catch((err) => {

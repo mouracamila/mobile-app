@@ -1,11 +1,18 @@
-import React from "react";
-import { Feather } from "@expo/vector-icons";
+import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, FlatList, Image, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  FlatList,
+  Image,
+  Text,
+  TouchableOpacity,
+  AsyncStorage,
+} from "react-native";
+
+import api from "../../services/api";
 
 import styles from "./styles";
 import Announcement from "../../components/Announcement";
-// import Menu from "../../components/Menu";
 import SellerData from "../../components/SellerData";
 
 export default function MyAds() {
@@ -15,26 +22,28 @@ export default function MyAds() {
     navigation.goBack();
   }
 
-  const seller = {
-    name: "Tomateiro",
-  };
+  // States
+  const [announcements, setAnnouncements] = useState([]);
 
-  const announcements = [
-    {
-      id: 1,
-      title: "Tomate",
-      description: "Tomates verdes sem api",
-      price: 1.0,
-      price_by: "kg",
-    },
-    {
-      id: 2,
-      title: "Tomate",
-      description: "Tomates verdes sem api",
-      price: 1.0,
-      price_by: "kg",
-    },
-  ];
+  async function loadData() {
+    const userToken = await AsyncStorage.getItem("userToken");
+    await api
+      .get("advertisements", {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
+      })
+      .then(({ data }) => {
+        setAnnouncements(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  useEffect(() => {
+    loadData();
+  }, []);
 
   function navigateToDetail() {
     navigation.navigate("AdDetail");
@@ -42,11 +51,7 @@ export default function MyAds() {
 
   return (
     <View style={styles.container}>
-      <SellerData seller={seller} />
-
-      <Text style={styles.apresentation}>
-        Anuncios dos meus vendedores favoritos
-      </Text>
+      {/* <SellerData seller={seller} /> */}
       <FlatList
         data={announcements}
         // style={styles.announcementList}
